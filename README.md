@@ -6,4 +6,4 @@ docker-compose up -d --build
 
 Вводиться искомая профессия, по ней выдается топ 20 скилов в разбивке Мск\Регионы.
 
-![alt tag](https://imgur.com/Yo8O6Xd)​
+![alt tag](https://imgur.com/W8Sf731)​
