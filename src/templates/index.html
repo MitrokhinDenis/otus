@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Гистограмма</title>
+         <form method="POST">
+    Input target profession (Python Developer) or list of profession by using comma (Data Engineer, Data Science, Big Data)
+        :<br>
+    <input type="text" name="tag" size="100"><br>
+    <input type="submit" value="Send" size="10000000">
+</form>
+  <script src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        {{ gist_titile_msk | safe }},
+        {{ gist_val_msk | safe }}
+    ]);
+    var options = {
+     title: 'Most popular skills for searching profession in Moscow',
+     hAxis: {title: 'Skill name'},
+     vAxis: {title: 'Skill count'}
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('oil'));
+    chart.draw(data, options);
+   }
+  </script>
+
+
+       <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        {{ gist_titile_reg | safe }},
+        {{ gist_val_reg | safe }}
+    ]);
+    var options = {
+     title: 'Most popular skills for searching profession in Region',
+     hAxis: {title: 'Skill name'},
+     vAxis: {title: 'Skill count'}
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('oil2'));
+    chart.draw(data, options);
+   }
+  </script>
+
+ </head>
+ <body>
+  <div id="oil" style="width: 2000px; height: 800px;"></div>
+ <div id="oil2" style="width: 2000px; height: 800px;"></div>
+ </body>
+ </html>
